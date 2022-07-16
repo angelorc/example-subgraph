@@ -1,18 +1,15 @@
 import { BigInt, cosmos } from "@graphprotocol/graph-ts";
-import { Reward } from "../generated/schema";
+import { Fantoken } from "../generated/schema";
 
-export function handleReward(data: cosmos.EventData): void {
+export function handleIssue(data: cosmos.EventData): void {
   const height = data.block.header.height;
 
-  const amount = data.event.getAttributeValue("amount");
-  const validator = data.event.getAttributeValue("validator");
+  const denom = data.event.getAttributeValue("denom");
 
-  let reward = new Reward(`${height}-${validator}`);
+  let fantoken = new Fantoken(`${denom}`)
+  fantoken.denom = denom
+  fantoken.height = BigInt.fromI64(height);
+  fantoken.timestamp = BigInt.fromString(data.block.header.time.seconds.toString())
 
-  reward.height = BigInt.fromI64(height);
-  reward.amount = amount;
-  reward.validator = validator;
-  reward.timestamp = BigInt.fromString(data.block.header.time.seconds.toString())
-
-  reward.save();
+  fantoken.save();
 }

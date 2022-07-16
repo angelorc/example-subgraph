@@ -1,5 +1,5 @@
 {
-  "name": "cosmos-validator-rewards",
+  "name": "bitsong-fantoken-issue",
   "version": "0.1.0",
   "repository": "https://github.com/graphprotocol/example-subgraph",
   "license": "MIT",
@@ -8,11 +8,9 @@
     "prepare:osmosis": "mustache config/osmosis.json subgraph.template.yaml > subgraph.yaml",
     "codegen": "graph codegen",
     "build": "graph build",
-    "create-local": "graph create cosmos-validator-rewards --node http://localhost:8020",
-    "deploy-local": "graph deploy cosmos-validator-rewards -l v0.2.0 --ipfs http://localhost:5001 --node http://localhost:8020",
-    "remove-local": "graph remove cosmos-validator-rewards --node http://localhost:8020",
-    "create": "graph create cosmos-validator-rewards --node https://api.thegraph.com/deploy/",
-    "deploy": "graph deploy cosmos-validator-rewards --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
+    "create-local": "graph create bitsong-fantoken-issue --node http://localhost:8020",
+    "deploy-local": "graph deploy bitsong-fantoken-issue -l v0.2.0 --ipfs http://localhost:5001 --node http://localhost:8020",
+    "remove-local": "graph remove bitsong-fantoken-issue --node http://localhost:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.30.0",

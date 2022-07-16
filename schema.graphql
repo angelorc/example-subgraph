@@ -1,7 +1,10 @@
-type Reward @entity {
+type Fantoken @entity {
   id: ID!
-  amount: String
   height: BigInt
-  validator: String
   timestamp: BigInt
+  name: String
+  denom: String
+  symbol: String
+  uri: String
+  max_supply: String 
 }
