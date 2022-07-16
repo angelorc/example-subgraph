@@ -7,4 +7,6 @@ type Fantoken @entity {
   symbol: String
   uri: String
   max_supply: String 
+  authority: String
+  minter: String
 }
