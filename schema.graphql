@@ -1,5 +1,7 @@
 type Reward @entity {
   id: ID!
   amount: String
+  height: BigInt
   validator: String
+  timestamp: BigInt
 }
